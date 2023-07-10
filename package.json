@@ -13,6 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
     "truffle": "^5.10.2"
   }
 }
