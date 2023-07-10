@@ -1,14 +1,10 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:14'
-    }
-  }
+  agent any
+  
   stages {
-    stage('Install dependencies and Truffle') {
-      steps {
+    stage('Install dependencies') { // The description of this build stage
+      steps { // The commands of this build stage
         sh 'npm install'
-        sh 'npm install -g truffle'
       }
     }
     stage('Build') {
@@ -25,11 +21,6 @@ pipeline {
       steps {
         sh 'truffle deploy --network mainnet'
       }
-    }
-  }
-  post {
-    always {
-      deleteDir() // clean up workspace
     }
   }
 }
