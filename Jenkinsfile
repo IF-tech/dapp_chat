@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat 'truffle compile'
+        bat './node_modules/.bin/truffle compile'
       }
     }
     stage('Test') {
