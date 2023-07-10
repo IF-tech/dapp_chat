@@ -4,22 +4,22 @@ pipeline {
   stages {
     stage('Install dependencies') { // The description of this build stage
       steps { // The commands of this build stage
-        sh 'npm install'
+        bat 'npm install'
       }
     }
     stage('Build') {
       steps {
-        sh 'truffle compile'
+        bat 'truffle compile'
       }
     }
     stage('Test') {
       steps {
-        sh 'npm test'
+        bat 'npm test'
       }
     }
     stage('Deploy') {
       steps {
-        sh 'truffle deploy --network mainnet'
+        bat 'truffle deploy --network development'
       }
     }
   }
