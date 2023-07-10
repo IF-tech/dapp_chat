@@ -1,0 +1,15 @@
+{
+  "name": "dapp_chat",
+  "version": "1.0.0",
+  "description": "\"# Decentralized Chat Application\"",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
