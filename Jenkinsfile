@@ -14,7 +14,15 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat './node_modules/.bin/truffle compile'
+        script {
+          bat '''
+            echo truffle develop > truffle_commands
+            echo compile >> truffle_commands
+            echo migrate --reset >> truffle_commands
+            echo .exit >> truffle_commands
+            truffle exec truffle_commands
+          '''
+        }
       }
     }
     stage('Test') {
@@ -24,7 +32,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'truffle deploy --network mainnet'
+        bat 'truffle migrate --network mainnet'
       }
     }
   }
