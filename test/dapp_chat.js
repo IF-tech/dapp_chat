@@ -2,7 +2,7 @@
 const assert = require("chai").assert;
 
 // Import the contract artifact
-const DappChat = artifacts.require("./DappChat.sol");
+const DappChat = artifacts.require("./Chat.sol");
 
 contract("DappChat", (accounts) => {
    let instance;

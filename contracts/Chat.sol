@@ -1,4 +1,4 @@
-// Specify the Solidity version
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.2;
 
 // Define the contract
