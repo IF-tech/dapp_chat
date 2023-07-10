@@ -20,7 +20,7 @@ pipeline {
             echo compile >> truffle_commands
             echo migrate --reset >> truffle_commands
             echo .exit >> truffle_commands
-            truffle exec truffle_commands
+            ./node_modules/.bin/truffle exec truffle_commands
           '''
         }
       }
