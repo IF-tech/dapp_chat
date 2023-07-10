@@ -2,8 +2,13 @@ pipeline {
   agent any
   
   stages {
-    stage('Install dependencies') { // The description of this build stage
-      steps { // The commands of this build stage
+    stage('Checkout SCM') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('Install dependencies') {
+      steps {
         bat 'npm install'
       }
     }
@@ -19,7 +24,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'truffle deploy --network development'
+        bat 'truffle deploy --network mainnet'
       }
     }
   }
