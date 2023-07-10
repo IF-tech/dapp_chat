@@ -16,7 +16,7 @@ pipeline {
       steps {
         script {
           bat '''
-            echo truffle develop > truffle_commands
+            echo ./node_modules/.bin/truffle develop > truffle_commands
             echo compile >> truffle_commands
             echo migrate --reset >> truffle_commands
             echo .exit >> truffle_commands
